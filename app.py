@@ -20,5 +20,9 @@ firebase = pyrebase.initialize_app(config)
 auth = firebase.auth()
 db = firebase.database()
 
+@app.route('/')
+def signin():
+      return render_template("index.html")
+
 if __name__ == '__main__':
     app.run(debug=True)
