@@ -21,7 +21,7 @@ auth = firebase.auth()
 db = firebase.database()
 
 @app.route('/', methods=['GET', 'POST'])
-def signup():
+def signin():
   error = ""
   if request.method == 'POST':
     email = request.form['email']
