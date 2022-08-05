@@ -21,6 +21,7 @@ auth = firebase.auth()
 db = firebase.database()
 
 
+#sign in
 @app.route('/', methods=['GET', 'POST'])
 def signin():
     error = ""
