@@ -23,33 +23,33 @@ db = firebase.database()
 
 @app.route('/', methods=['GET', 'POST'])
 def signin():
-<<<<<<< HEAD
-  error = ""
-  if request.method == 'POST':
-    email = request.form['email']
-    password = request.form['password']
-    try:
-      login_session['user'] = auth.create_user_with_email_and_password(email, password)
-      return redirect(url_for('signup'))
-    except:
-      error = "Authentication failed"
-  return render_template("signin.html")
-=======
     error = ""
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
         try:
-            login_session['user'] = auth.create_user_with_email_and_password(email, password)
+            login_session['user'] = auth.sign_in_with_email_and_password(email, password)
             return redirect(url_for('signup'))
         except:
             error = "Authentication failed"
     return render_template("signin.html")
 
->>>>>>> 90b378ccb0ec078db2681c2bc71b73932a367840
 
-@app.route('/signup')
+@app.route('/signup', methods=['GET', 'POST'])
 def signup():
+    error = ""
+    if request.method == 'POST':
+        email = request.form["email"]
+        password = request.form["password"]
+        confirm_password = request.form["confirm_password"]
+        if password == confirm_password:
+            try:
+                login_session['user'] = auth.create_user_with_email_and_password(email, password)
+                return redirect(url_for('signup'))
+            except:
+                return redirect(url_for('signup', error = "Authentication failed"))
+        else:
+            return redirect(url_for('signup', error = "Confirm password does not match"))
     return render_template("signup.html")
 
 
