@@ -20,9 +20,20 @@ firebase = pyrebase.initialize_app(config)
 auth = firebase.auth()
 db = firebase.database()
 
-@app.route('/')
-def signin():
-      return render_template("index.html")
+@app.route('/', methods=['GET', 'POST'])
+def signup():
+  error = ""
+  if request.method == 'POST':
+    email = request.form['email']
+    password = request.form['password']
+    try:
+      login_session['user'] = auth.create_user_with_email_and_password(email, password)
+      return redirect(url_for('signup'))
+    except:
+      error = "Authentication failed"
+  return render_template("signin.html")
+
+  
 
 if __name__ == '__main__':
     app.run(debug=True)
