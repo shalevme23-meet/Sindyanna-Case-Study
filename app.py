@@ -21,7 +21,6 @@ auth = firebase.auth()
 db = firebase.database()
 
 
-#sign in
 @app.route('/', methods=['GET', 'POST'])
 def signin():
     error = ""
@@ -30,7 +29,7 @@ def signin():
         password = request.form['password']
         try:
             login_session['user'] = auth.sign_in_with_email_and_password(email, password)
-            return redirect(url_for('signup'))
+            return redirect(url_for('home'))
         except:
             error = "Authentication failed"
     return render_template("signin.html")
@@ -46,13 +45,16 @@ def signup():
         if password == confirm_password:
             try:
                 login_session['user'] = auth.create_user_with_email_and_password(email, password)
-                return redirect(url_for('signup'))
+                return redirect(url_for('signin'))
             except:
-                return redirect(url_for('signup', error = "Authentication failed"))
+                return redirect(url_for('signin', error = "Authentication failed"))
         else:
             return redirect(url_for('signup', error = "Confirm password does not match"))
     return render_template("signup.html")
 
+@app.route('/home')
+def home():
+    return render_template('home.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
