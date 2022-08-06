@@ -8346,3 +8346,32 @@ textarea.form-control {
         border: 1px solid transparent;
         background: #fbceb5;
         color: #fff; }
+
+.js .language-picker__form {
+  // if JavaScript is enabled, hide the default form element
+  display: none;
+}
+
+.language-picker__dropdown {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 200px;
+  background-color: var(--color-bg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-xxs) 0;
+  border-radius: 0.25em;
+  z-index: var(--zindex-popover);
+
+  // hide the language list by default
+  visibility: hidden;
+  opacity: 0;
+  transition: .2s ease-out;
+}
+
+.language-picker__button[aria-expanded="true"] + .language-picker__dropdown {
+  // show the language list when the aria-expanded attribute of the button element is true
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(4px);
+}
