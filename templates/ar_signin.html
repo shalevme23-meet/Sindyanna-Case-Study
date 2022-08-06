@@ -1,10 +1,101 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+  <head>
+    <title>Login 10</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-</body>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="static/css/style.css">
+
+    </head>
+    <body class="img js-fullheight" style="background-image: url(static/images/bg.jpg);">
+    <button class="language-picker__button" aria-label="English, Select your language" aria-expanded="false" aria-controls="language-picker-dropdown">
+      <span aria-hidden="true" class="language-picker__flag language-picker__flag--english"></span>
+    </button>
+    <div class="language-picker__dropdown" aria-describedby="language-picker-description" id="language-picker-dropdown">
+      <p class="sr-only" id="language-picker-description">اختر لغة</p>
+
+      <ul class="language-picker__list" role="listbox">
+        <li>
+          <a lang="he" hreflang="he" href="/he_signin" role="option" data-value="hebrew" class="language-picker__item language-picker__flag language-picker__flag--hebrew">עברית</a>
+        </li>
+
+        <li>
+          <a lang="en" hreflang="en" href="/signin" aria-selected="true" role="option" data-value="english" class="language-picker__item language-picker__flag language-picker__flag--english">English</a>
+        </li>
+
+        <li>
+          <a lang="ar" hreflang="ar" href="/ar_signin" aria-selected="true" role="option" data-value="arabic" class="language-picker__item language-picker__flag language-picker__flag--arabic">English</a>
+        </li>
+
+        <!-- other language items -->
+      </ul>
+    </div>
+    <div class="language-picker js-language-picker">
+<!--      <form action="" class="language-picker__form">-->
+        <label for="language-picker-select" style="color:black;">اختر لغة</label>
+
+        <select name="language-picker-select" id="language-picker-select">
+          <a href="/he_signin"><option lang="he" value="hebrew">עברית</option></a>
+          <a href="/signin"><option lang="en" value="english" selected>English</option></a>
+          <a href="/ar_signin"><option lang="ar" value="arabic">عربي</option></a>
+          <!-- other language options -->
+        </select>
+<!--      </form>-->
+    </div>
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-5">
+                    <h2 class="heading-section">تسجيل الدخول</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="login-wrap p-0">
+                <h3 class="mb-4 text-center">لديك حساب؟</h3>
+                <form action="/" class="signin-form" method="POST">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="email" placeholder="البريد الإلكتروني" required>
+                    </div>
+                <div class="form-group">
+                  <input id="password-field" type="password" class="form-control" name="password" placeholder="كلمه السر" required>
+                  <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="form-control btn btn-primary submit px-3">تسجيل الدخول</button>
+                </div>
+                <div class="form-group d-md-flex">
+                    <div class="w-50">
+                        <label class="checkbox-wrap checkbox-primary">تذكرني
+                                      <input type="checkbox" checked>
+                                      <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="w-50 text-md-right">
+                                    <a href={{url_for('signup')}} style="color: #fff">اشتراك</a>
+                                </div>
+                </div>
+              </form>
+              <p class="w-100 text-center">&mdash; أو تسجيل الدخول باستخدام &mdash;</p>
+              <div class="social d-flex text-center">
+                <a href="#" class="px-2 py-2 mr-md-1 rounded"><span class="ion-logo-facebook mr-2"></span> فيسبوك</a>
+                <a href="#" class="px-2 py-2 ml-md-1 rounded"><span class="ion-logo-twitter mr-2"></span> تويتر</a>
+              </div>
+              </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="static/js/jquery.min.js"></script>
+  <script src="static/js/popper.js"></script>
+  <script src="static/js/bootstrap.min.js"></script>
+  <script src="static/js/main.js"></script>
+
+    </body>
 </html>

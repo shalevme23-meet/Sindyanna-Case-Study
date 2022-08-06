@@ -34,7 +34,6 @@ def signin():
             error = "Authentication failed"
     return render_template("signin.html")
 
-
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     error = ""
