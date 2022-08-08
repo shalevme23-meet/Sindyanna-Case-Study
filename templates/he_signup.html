@@ -60,12 +60,12 @@
 				<div class="col-md-6 col-lg-4">
 					<div class="login-wrap p-0">
 		      	<h3 class="mb-4 text-center">יש לך חשבון?</h3>
-		      	<form action="/signup" class="signin-form" method="POST">
+		      	<form action="/he_signup" class="signin-form" method="POST">
 		      		<div class="form-group">
 		      			<input type="text" class="form-control" name="email" placeholder="אימייל" required>
 		      		</div>
 	            <div class="form-group">
-	              <input id="password-field" type="password" class="form-control" name="סיסמה" placeholder="סיסמה" required>
+	              <input id="password-field" type="password" class="form-control" name="password" placeholder="סיסמה" required>
 	              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 	            </div>
 				<div class="form-group">
@@ -77,13 +77,9 @@
 	            </div>
 	            <div class="form-group d-md-flex">
 	            	<div class="w-50">
-		            	<label class="checkbox-wrap checkbox-primary">זכור אותי
-									  <input type="checkbox" checked>
-									  <span class="checkmark"></span>
-									</label>
-								</div>
-								<div class="w-50 text-md-right">
-									<a href="#" style="color: #fff">שכחת את הסיסמא</a>
+	            		<center>
+									<a href="/he_signin" style="color: #fff">יש לי חשבון</a>
+									</center>
 								</div>
 	            </div>
 	          </form>

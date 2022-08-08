@@ -84,7 +84,7 @@ def hesignup():
         email = request.form['email']
         password = request.form['password']
         try:
-            login_session['user'] = auth.sign_in_with_email_and_password(email, password)
+            login_session['user'] = auth.create_user_with_email_and_password(email, password)
             return redirect(url_for('hesignin'))
         except:
             error = "Authentication failed"
@@ -97,11 +97,12 @@ def arsignup():
         email = request.form['email']
         password = request.form['password']
         try:
-            login_session['user'] = auth.sign_in_with_email_and_password(email, password)
+            login_session['user'] = auth.create_user_with_email_and_password(email, password)
             return redirect(url_for('arsignin'))
         except:
             error = "Authentication failed"
-    return render_template("ar_signup.html")
+            return render_template("ar_signup.html", error = error)
+    return render_template("ar_signup.html", error = error)
 
 @app.route('/home')
 def home():
