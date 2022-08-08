@@ -51,6 +51,58 @@ def signup():
             return redirect(url_for('signup', error = "Confirm password does not match"))
     return render_template("signup.html")
 
+@app.route('/he_signin', methods=['GET', 'POST'])
+def hesignin():
+    error = ""
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+        try:
+            login_session['user'] = auth.sign_in_with_email_and_password(email, password)
+            return redirect(url_for('home'))
+        except:
+            error = "Authentication failed"
+    return render_template("he_signin.html")
+
+@app.route('/ar_signin', methods=['GET', 'POST'])
+def arsignin():
+    error = ""
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+        try:
+            login_session['user'] = auth.sign_in_with_email_and_password(email, password)
+            return redirect(url_for('home'))
+        except:
+            error = "Authentication failed"
+    return render_template("ar_signin.html")
+
+@app.route('/he_signup', methods=['GET', 'POST'])
+def hesignup():
+    error = ""
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+        try:
+            login_session['user'] = auth.sign_in_with_email_and_password(email, password)
+            return redirect(url_for('home'))
+        except:
+            error = "Authentication failed"
+    return render_template("he_signup.html")
+
+@app.route('/ar_signup', methods=['GET', 'POST'])
+def arsignup():
+    error = ""
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+        try:
+            login_session['user'] = auth.sign_in_with_email_and_password(email, password)
+            return redirect(url_for('home'))
+        except:
+            error = "Authentication failed"
+    return render_template("ar_signup.html")
+
 @app.route('/home')
 def home():
     return render_template('home.html')
