@@ -104,9 +104,29 @@ def arsignup():
             return render_template("ar_signup.html", error = error)
     return render_template("ar_signup.html", error = error)
 
+@app.route('/admin', methods=['GET', 'POST'])
+def admin():
+        
+  if request.method == 'POST':
+    name = request.form["name"]
+    humidity = request.form["humidity"]
+    sunlight = request.form["sunlight"]
+    try:
+      post = {"name" : name, "humidity" : humidity, "sunlight": sunlight , "uid":login_session['user']['localId']}
+      db.child("posts").push(post)
+      return redirect(url_for('home'))
+    except:
+      error = "Authentication failed"
+  return render_template("admin.html")
+
+@app.route('/show_info', methods=['GET', 'POST'])
+def showinfo():
+  post = db.child("posts").get().val()
+  return render_template("show_info.html", t = post )
+
 @app.route('/home')
 def home():
-    return render_template('index.html')
+    return render_template('home.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
