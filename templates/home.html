@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!-- 
-Conquer Template
-http://www.templatemo.com/preview/templatemo_426_conquer
--->
 <head>
 <title>Home</title>
 <meta name="keywords" content="">
@@ -17,17 +13,13 @@ http://www.templatemo.com/preview/templatemo_426_conquer
 <link rel="stylesheet" href="static/css/templatemo_misc.css">
 <link rel="stylesheet" href="static/css/templatemo_style.css">
 <link rel="stylesheet" href="static/css/styles.css">
+<link rel="stylesheet" href="static/css/search.css">
 <!-- JavaScripts -->
 <script src="static/js/jquery-1.11.1.min.js"></script>
-<script src="static/js/bootstrap-dropdown.js"></script>
-<script src="static/js/bootstrap-collapse.js"></script>
-<script src="static/js/bootstrap-tab.js"></script>
-<script src="static/js/jquery.singlePageNav.js"></script>
-<script src="static/js/jquery.flexslider.js"></script>
-<script src="static/js/custom.js"></script>
-<script src="static/js/jquery.lightbox.js"></script>
-<script src="static/js/templatemo_custom.js"></script>
-<script src="static/js/responsiveCarousel.min.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
 </head>
 <body>
 <!-- header start -->
@@ -62,10 +54,21 @@ http://www.templatemo.com/preview/templatemo_426_conquer
           </div>
           <!-- /.container-fluid --> 
         </nav>
+  <div class="wrapper">
+    <div class="search-input">
+        <a href="" target="_blank" hidden></a>
+        <input type="text" placeholder="Type to search...">
+        <div class="autocom-box">
+            <!-- here list are inserted from javascript -->
+        </div>
+        <div class="icon"><i class="fas fa-search"></i></div>
+    </div>
+  </div>
         <div class="clear"></div>
       </div>
     </div>
   </div>
+
   <div class="templatemo_headerimage">
     <div class="flexslider">
       <ul class="slides">
@@ -358,25 +361,7 @@ http://www.templatemo.com/preview/templatemo_426_conquer
         <div class="templatemo_address_right">admin@company.com<br>
           info@company.com</div>
       </div>
-      <form action="#" method="post">
-        <div class="col-md-9">
-          <div class="col-md-4">
-            <input type="text" name="name" id="name" class="name" placeholder="Your Name">
-          </div>
-          <div class="col-md-4">
-            <input type="text" name="email" id="email" class="email" placeholder="Your Email">
-          </div>
-          <div class="col-md-4">
-            <input type="text" name="subject" id="subject" class="subject" placeholder="Subject">
-          </div>
-          <div class="col-md-12">
-            <textarea name="message" cols="1" rows="1" class="message" placeholder="Your message... " id="message"></textarea>
-          </div>
-          <div class="col-md-4">
-            <input type="submit" name="send" value="Send Message" id="submit" class="button templatemo_sendbtn">
-          </div>
-        </div>
-      </form>
+
     </div>
   </div>
 </div>
@@ -436,5 +421,19 @@ $(window).scroll(function() {
     }
 });
 </script>
+
+<script src="static/js/script.js"></script>
+<script src="static/js/suggestions.js"></script>
+
+<script src="static/js/bootstrap-dropdown.js"></script>
+<script src="static/js/bootstrap-collapse.js"></script>
+<script src="static/js/bootstrap-tab.js"></script>
+<script src="static/js/jquery.singlePageNav.js"></script>
+<script src="static/js/jquery.flexslider.js"></script>
+<script src="static/js/custom.js"></script>
+<script src="static/js/jquery.lightbox.js"></script>
+<script src="static/js/templatemo_custom.js"></script>
+<script src="static/js/responsiveCarousel.min.js"></script>
+
 </body>
 </html>

@@ -8388,7 +8388,7 @@ textarea.form-control {
 
 .bt-language
 {
-    color: #212121;
+    color: #ffffff;
     font-family: TitilliumWeb-Regular;
     font-size: 15px;
     overflow: hidden;
@@ -8420,7 +8420,7 @@ textarea.form-control {
 
 .Language-list
 {
-    background-color: #E0E0E0;
+    background-color: #cef0dd;
     margin-top: 8px;
     list-style: none !important;
     padding-left: 0px;

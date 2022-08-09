@@ -7,10 +7,12 @@
 </head>
 <body>
 	<center>
-	{%for z in t %}
-	<h3>{{t[z]['name']}}:</h3>
-	<p>{{t[z]['humidity']}}</p>
-	<p>{{t[z]['sunlight']}}</p>
+	{%for plant in t %}
+		{%if t[plant][name] == plant_id%}
+			<h3>{{t[plant]['name']}}:</h3>
+			<p>{{t[plant]['humidity']}}</p>
+			<p>{{t[plant]['sunlight']}}</p>
+		{%endif%}
 	{%endfor%}
 	</center>
 </body>

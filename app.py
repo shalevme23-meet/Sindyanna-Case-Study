@@ -119,10 +119,10 @@ def admin():
       error = "Authentication failed"
   return render_template("admin.html")
 
-@app.route('/show_info', methods=['GET', 'POST'])
-def showinfo():
+@app.route('/show_info/<string:plant_id>', methods=['GET', 'POST'])
+def showinfo(plant_id):
   post = db.child("posts").get().val()
-  return render_template("show_info.html", t = post )
+  return render_template("show_info.html", t = post, pid=plant_id)
 
 @app.route('/home')
 def home():
