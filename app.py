@@ -15,7 +15,7 @@ config = {
     "appId": "1:658775746831:web:70bb5d0785ad4c4a5c767a",
     "measurementId": "G-3HN7C637P4"
 }
-
+   
 firebase = pyrebase.initialize_app(config)
 auth = firebase.auth()
 db = firebase.database()
@@ -27,6 +27,8 @@ def signin():
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
+        if email == "admin@gmail.com" and password == "adminkey":
+            return redirect(url_for('admin'))  
         try:
             login_session['user'] = auth.sign_in_with_email_and_password(email, password)
             return redirect(url_for('home'))
@@ -70,11 +72,19 @@ def arsignin():
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
+    if email == "admin@gmail.com" and password == "adminkey":
+        return redirect(url_for('admin'))    
         try:
             login_session['user'] = auth.sign_in_with_email_and_password(email, password)
             return redirect(url_for('home'))
         except:
             error = "Authentication failed"
+    # if login_session['user'] = auth.sign_in_with_email_and_password(email, password):
+    #     if admin == true
+    #         sub(onclick) = true
+        # else:
+        #     sub(onclick) = false
+
     return render_template("ar_signin.html")
 
 @app.route('/he_signup', methods=['GET', 'POST'])

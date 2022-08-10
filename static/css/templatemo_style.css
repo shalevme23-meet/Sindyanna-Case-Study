@@ -13,7 +13,7 @@ h1{width:100%; font-size:36px; color:#747474; text-align:center;}
 .templatemo_marginbot{margin-bottom:50px;}
 .templatemo_topbar{width:100%; background:url(../images/templatemo-topbar-bg.png) repeat-x; position:fixed; z-index:10; top:0;}
 
-.templatemo_headerimage{width:100%; margin-top:50px; position:relative;}
+.templatemo_headerimage{height: 100%; width:100%; margin-top:50px; position:relative;}
 .templatemo_headerimage img{width:100%;}
 .templatemo_blackoverlay{opacity:0.6; width:100%; height:100%; ; position:absolute; top:53px;}
 
@@ -105,7 +105,7 @@ Media Queries
 	.templatemo_titlewrapper{display:none;}
 	.templatemo_titlewrappersmall{float:left; font-size:28px; color:#ffffff; line-height:50px; margin-left:20px;}
 	.templatemo_topbar .container-fluid>.navbar-collapse{background:#ca482a; opacity:0.9; border:none;}
-	.templatemo_topbar .navbar-default .navbar-nav>li>a{font-size:14px; padding:10px 10px; border-bottom:1px solid #66BB55;}
+	.templatemo_topbar .navbar-default .navbar-nav>li>a{font-size:14px; padding:10px 10px; border-bottom:1px solid #e46142;}
 	.margin_bottom_1col{margin-bottom:20px;}
 	.margin_bottom_2col{margin-bottom:0;}
 	#top-menu{background:#ca482a; margin:0 -15px; opacity:0.9;}
