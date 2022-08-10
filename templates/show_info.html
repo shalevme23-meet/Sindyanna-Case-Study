@@ -4,14 +4,19 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>info</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700,800' rel='stylesheet' type='text/css'>
 </head>
-<body>
+<body style="
+  background-image: url('../static/images/infobg.jpeg');
+  color: white;
+
+">
 	<center>
 	{%for plant in t %}
 		{%if t[plant][name] == plant_id%}
-			<h3>{{t[plant]['name']}}:</h3>
-			<p>{{t[plant]['humidity']}}</p>
-			<p>{{t[plant]['sunlight']}}</p>
+			<h2>{{t[plant]['name']}}:</h2>
+			<h3>{{t[plant]['humidity']}}</h3>
+			<h3>{{t[plant]['sunlight']}}</h3>
 		{%endif%}
 	{%endfor%}
 	</center>
